@@ -40,3 +40,25 @@
 .Unused{
   background-color: white;
 }
+
+.Grids{
+  display:grid;
+  /* grid-template-columns: repeat(5, minmax(0, 5fr)); */
+  grid-template-columns: repeat(5, 40px);
+  
+  grid-gap: 5px;
+  /* row-gap: 10px; */
+  justify-items: center;
+}
+
+.Charbox{
+  display:inline-block;
+  width: 20px;
+  height: 30px;
+  border: 3px solid black;
+  
+  padding: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}

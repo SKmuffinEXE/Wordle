@@ -1,31 +1,36 @@
-import Keyboard from './components/Keyboard';
-import WordList from './Wordlist';
+import { commputeGuess, getRandomWord } from './components/utils';
+import { letterStates } from './components/utils';
 import { useState } from 'react';
 import './App.css';
-import Guesses from './components/Guesses';
-import Input from './components/Input';
+import WordRow from './components/WordRow';
+import Rows from './Rows';
 
 function App() {
-  const [guess, setGuess] = useState([])
-  const [slots, setSlots] = useState(0)
-  const [attempts, setAttempts] = useState(0)
-  let answer = "Vixen"
+
+// const [answer, setAnswer]  = useState(getRandomWord)
+const [answer, setAnswer]  = useState("worse")  //test case
+const [guess, setGuess] = useState("video") //test case
+
 
   function checker(word) {
 
   }
 
-
-
-
+  //console.log(getRandomWord())
+// console.log(answer)
+// console.log(guess)
+// console.log(commputeGuess(guess, answer))
 
   return (
     <div className="App">
       <header className="App-header">
         David's Wordle
       </header>
-      <Guesses guess = {guess}/>
-      <Keyboard slots = {slots} setSlots = {setSlots} setGuess ={setGuess} guess = {guess}/>
+      <Rows answer = {answer}/>
+  
+      
+      {/* <Guesses guess = {guess}/>
+      <Keyboard slots = {slots} setSlots = {setSlots} setGuess ={setGuess} guess = {guess}/> */}
 
     </div>
   );
