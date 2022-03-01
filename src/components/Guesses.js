@@ -2,11 +2,7 @@ import { useState } from "react"
 
 
 export default function Guesses({guess}){
-    const [first, setFirst] = useState(guess[0])
-    const [second, setSecond] = useState(" ")
-    const [third, setThird] = useState(" ")
-    const [fourth, setFouth] = useState(" ")
-    const [fifth, setFifth] = useState(" ")
+    const [firstClass, setFirstClass] = useState("Keyboard-tile unused")
 
 
     return(

@@ -11,12 +11,15 @@ export default function Keyboard({slots, setSlots, setGuess, guess}){
     }
     const OnSubmit = () => {
         //submits whole word
-        console.log("submit")
+        console.log("Submit")
     }
 
     const OnDel = () => {
         //deletes a letter off guess
         console.log("Delete")
+        if(slots > 0){
+            console.log("works!")
+        }
 
     }
 

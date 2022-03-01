@@ -1,4 +1,5 @@
 import Keyboard from './components/Keyboard';
+import WordList from './Wordlist';
 import { useState } from 'react';
 import './App.css';
 import Guesses from './components/Guesses';
