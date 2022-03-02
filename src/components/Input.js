@@ -1,7 +1,7 @@
 import { useState } from "react"
 import WordList from "../Wordlist"
 
-export function Input({guess, setGuess}){
+export function Input({guess, setGuess, add}){
 const [bad, setBad] = useState(false)
 
 function handleSubmit(e) {
@@ -13,6 +13,7 @@ function handleSubmit(e) {
     else{
         console.log("This is a word")
         setBad(false)
+        add()
     }
 }
 

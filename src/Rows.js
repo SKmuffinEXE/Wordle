@@ -2,24 +2,18 @@
 import WordRow from "./components/WordRow"
 import { useState } from "react"
 
-export default function Rows({answer}){
-    const [guess,setGuess] = useState()
-    const [currentGuess, setCurrentGuess] = useState(0)
-    const [firstGuess, setFirstGuess] = useState("")
-    const [secondGuess, setSecondGuess] = useState("")
-    const [thirdGuess, setThirdGuess] = useState("")
-    const [fourthGuess, setForthGuess] = useState("")
-    const [fifthGuess, setFifthGuess] = useState("")
-    const [sixthGuess, setSixthGuess] = useState("")
+export default function Rows({answer, guesses, setWin}){
+  
     
 return(
     <div>
-      <WordRow letters = {firstGuess} answer = {answer}/>
-      <WordRow letters = {secondGuess}  answer = {answer}/>
+        {guesses.map(g => <WordRow letters = {g} answer = {answer} setWin = {setWin}/>)}
+      {/* <WordRow letters = {guess} answer = {answer}/> */}
+      {/* <WordRow letters = {secondGuess}  answer = {answer}/>
       <WordRow letters = {thirdGuess} answer = {answer}/>
       <WordRow letters = {fourthGuess} answer = {answer}/>
       <WordRow letters = {fifthGuess} answer = {answer}/>
-      <WordRow letters = {sixthGuess} answer = {answer}/>
+      <WordRow letters = {sixthGuess} answer = {answer}/> */}
     </div>
 )
 
