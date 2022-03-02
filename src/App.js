@@ -1,25 +1,14 @@
-import { commputeGuess, getRandomWord } from './components/utils';
-import { letterStates } from './components/utils';
 import { useState } from 'react';
+import { getRandomWord } from './components/utils';
 import './App.css';
-import WordRow from './components/WordRow';
 import Rows from './Rows';
+import { Input } from './components/Input';
 
 function App() {
 
-// const [answer, setAnswer]  = useState(getRandomWord)
-const [answer, setAnswer]  = useState("worse")  //test case
-const [guess, setGuess] = useState("video") //test case
-
-
-  function checker(word) {
-
-  }
-
-  //console.log(getRandomWord())
-// console.log(answer)
-// console.log(guess)
-// console.log(commputeGuess(guess, answer))
+const [answer, setAnswer]  = useState(getRandomWord)
+// const [answer, setAnswer]  = useState("worse")  //test case
+const [guess, setGuess] = useState("") //test case
 
   return (
     <div className="App">
@@ -27,6 +16,7 @@ const [guess, setGuess] = useState("video") //test case
         David's Wordle
       </header>
       <Rows answer = {answer}/>
+      <Input guess = {guess} setGuess = {setGuess}/>
   
       
       {/* <Guesses guess = {guess}/>
