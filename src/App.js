@@ -8,15 +8,15 @@ function App() {
 
 const [answer, setAnswer]  = useState(getRandomWord)
 // const [answer, setAnswer]  = useState("worse")  //test case
-const [attempts, setAttempts] = useState(0)
+const [attempts, setAttempts] = useState(6)
 const [guess, setGuess] = useState("") //test case
 const [guesses, setGuesses] = useState([])
 const [win, setWin] = useState(false)
 
 function addGuess(){
   console.log("hit")
-  if(attempts < 6){
-  setAttempts(attempts => attempts+1)
+  if(attempts > 0){
+  setAttempts(attempts => attempts-1)
   setGuesses([...guesses, guess])}
 }
 
@@ -26,7 +26,7 @@ function addGuess(){
       <header className="App-header">
         David's Wordle
       </header>
-      {attempts < 6 ? `Attempts left: ${6 - attempts}` : "Game Over"}
+      {attempts > 0 ? `Attempts left: ${attempts}` : "Game Over"}
       <Rows answer = {answer} guesses = {guesses} setWin = {setWin}/>
       <Input  guess = {guess} setGuess = {setGuess} add = {addGuess}/>
 
